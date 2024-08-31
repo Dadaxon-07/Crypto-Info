@@ -2,6 +2,7 @@ import 'dart:convert';
 
 import 'package:http/http.dart' as http;
 
+import '../model/Adreess.dart';
 import '../model/post.dart';
 
 class HTTPRequest {
@@ -13,7 +14,6 @@ class HTTPRequest {
   };
 
   static String API_List = "/photos";
-
   static String API_Create = "/photos";
   static String API_Update = "/photos/";
   static String API_Delete = "photos/";
@@ -56,9 +56,9 @@ class HTTPRequest {
     return params;
   }
 
-  static List<Post> parsePostList(String response) {
+  static List<Welcome> parsePostList(String response) {
     dynamic json = jsonDecode(response);
-    var data = List<Post>.from(json.map((x) => Post.fromJson(x)));
+    var data = List<Welcome>.from(json.map((x) => Welcome.fromJson(x)));
     return data;
   }
 }
