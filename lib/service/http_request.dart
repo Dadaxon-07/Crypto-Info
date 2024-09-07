@@ -3,7 +3,6 @@ import 'dart:convert';
 import 'package:http/http.dart' as http;
 
 import '../model/Adreess.dart';
-import '../model/post.dart';
 
 class HTTPRequest {
   // Get , Post , Put , Delete
