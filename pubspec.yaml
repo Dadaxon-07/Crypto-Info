@@ -38,6 +38,7 @@ dependencies:
   http: ^1.2.2
   fancy_bottom_navigation_plus: ^1.0.3
   logger: ^2.4.0
+  fl_chart: ^0.69.0
 
 dev_dependencies:
   flutter_test:
