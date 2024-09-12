@@ -1,5 +1,6 @@
 import 'dart:convert';
 
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:networking_lesson/model/crypto_model.dart';
 import 'package:http/http.dart' as http;
@@ -34,9 +35,16 @@ class _CryptoPageState extends State<CryptoPage> {
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
-        title: Text(
-          "Crypto  \$",
-          style: TextStyle(color: Colors.white60),
+        title: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Text(
+              "Crypto Info",
+              style: TextStyle(color: Colors.white60,fontSize: 22),
+            ),
+            SizedBox(width: 10,),
+            Icon(CupertinoIcons.money_dollar_circle_fill, color: Colors.orange, size: 31,)
+          ],
         ),
         backgroundColor: Color.fromARGB(255, 25, 23, 59),
       ),
@@ -44,6 +52,7 @@ class _CryptoPageState extends State<CryptoPage> {
           future: fetchCrypto(),
           builder: (context, index) {
             return Container(
+              padding: EdgeInsets.all(5),
               decoration: BoxDecoration(
                 gradient: LinearGradient(
                   colors: [
@@ -72,6 +81,7 @@ class _CryptoPageState extends State<CryptoPage> {
                           image: list[index].image,
                           price: list[index].currentPrice.toDouble(),
                           crypto: list[index],
+                          priceChange24H: list[index].priceChange24H
                         );
                       }));
                     },
@@ -98,6 +108,7 @@ class _CryptoPageState extends State<CryptoPage> {
                       style: TextStyle(fontSize: 17, color: Colors.white54),
                     ),
                   );
+
                 },
               ),
             );
