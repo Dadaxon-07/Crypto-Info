@@ -1,5 +1,6 @@
 # Crytpo Info
 <h2>Menu page</h2>
+
 ![image](https://github.com/user-attachments/assets/61a605e5-c6ad-4831-a71b-093498702a51)
 
 <h2>Info page</h2>
